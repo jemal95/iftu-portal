@@ -15,14 +15,26 @@ export enum Grade {
   TVET_LEVEL_4 = 'TVET Level 4'
 }
 
-export type ExamType = 'mid' | 'final';
+export enum Stream {
+  GENERAL = 'General',
+  NATURAL_SCIENCE = 'Natural Science',
+  SOCIAL_SCIENCE = 'Social Science'
+}
+
+export type ExamType = 'mid' | 'final' | 'mock-eaes';
+export type Language = 'en' | 'am' | 'om';
 
 export interface Lesson {
   id: string;
   title: string;
   duration: string;
   content: string;
-  type: 'video' | 'reading' | 'quiz';
+  type: 'video' | 'reading' | 'quiz'; 
+  contentType: 'video' | 'reading' | 'quiz' | 'assignment';
+  videoUrl?: string;
+  pdfUrl?: string;
+  isCompleted?: boolean;
+  questions?: Question[];
 }
 
 export interface Course {
@@ -30,12 +42,18 @@ export interface Course {
   title: string;
   code: string;
   grade: Grade;
+  stream: Stream;
   level: EducationLevel;
   thumbnail: string;
   description: string;
   lessons: Lesson[];
   instructor: string;
+  instructorId?: string;
+  instructorEmail?: string;
+  instructorPhoto?: string;
   subject: string;
+  enrolledStudents?: number;
+  prerequisites?: string[];
 }
 
 export interface Question {
@@ -44,6 +62,7 @@ export interface Question {
   options: string[];
   correctAnswer: number;
   points: number;
+  category: string;
 }
 
 export interface Exam {
@@ -51,13 +70,62 @@ export interface Exam {
   title: string;
   courseCode: string;
   grade: Grade;
+  stream: Stream;
+  academicYear: number;
   durationMinutes: number;
   questions: Question[];
+  categories?: string[];
   totalPoints: number;
   status: 'draft' | 'published' | 'closed';
   type: ExamType;
   semester: 1 | 2;
   subject: string;
+}
+
+export interface News {
+  id: string;
+  date: string;
+  tag: string;
+  title: string;
+  summary: string;
+  content: string;
+  image: string;
+}
+
+export interface Badge {
+  id: string;
+  title: string;
+  icon: string;
+  earnedAt: string;
+}
+
+export interface User {
+  id: string;
+  name: string;
+  role: 'student' | 'teacher' | 'admin';
+  grade?: Grade;
+  stream?: Stream;
+  level?: EducationLevel;
+  points: number;
+  status: 'active' | 'pending' | 'suspended';
+  email: string;
+  joinedDate: string;
+  nid?: string; // National ID
+  gender?: 'Male' | 'Female' | 'Other';
+  dob?: string;
+  salary?: number; // Teacher Salary or Student Stipend
+  photo?: string;
+  department?: string;
+  subjects?: string[]; 
+  phoneNumber?: string;
+  address?: string;
+  preferredLanguage: Language;
+  badges: Badge[];
+  school?: string;
+  completedLessons?: string[];
+  completedExams?: string[];
+  completedCourses?: string[];
+  certificatesPaid?: string[];
 }
 
 export interface ExamResult {
@@ -66,26 +134,7 @@ export interface ExamResult {
   score: number;
   totalPoints: number;
   completedAt: string;
+  timeSpentSeconds: number;
   answers: Record<string, number>;
-}
-
-export interface User {
-  id: string;
-  name: string;
-  role: 'student' | 'teacher' | 'admin';
-  grade?: Grade;
-  level?: EducationLevel;
-  points: number;
-  status: 'active' | 'pending' | 'suspended';
-  email: string;
-  joinedDate: string;
-  // Enhanced Personal Info
-  nid?: string;
-  gender?: 'male' | 'female' | 'other';
-  dob?: string;
-  salary?: number;
-  photo?: string;
-  certificatesPaid?: string[]; // IDs of certificates paid for
-  department?: string;
-  phoneNumber?: string;
+  categoryBreakdown: Record<string, { correct: number; total: number }>;
 }
