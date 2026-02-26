@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Course, Lesson, Question, Language } from './types';
-import { getLessonDeepDive } from './geminiService';
+import { Course, Lesson, Question, Language } from '../types';
+import { getLessonDeepDive } from '../services/geminiService';
 import LiveInterviewer from './LiveInterviewer';
 
 const SovereignSkeleton: React.FC<{ className?: string }> = ({ className = "" }) => (
