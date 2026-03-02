@@ -68,7 +68,7 @@ const DevPortal: React.FC = () => {
             </div>
             <div className="space-y-2">
               <h4 className="text-xl font-black uppercase italic">Step 3: Activation</h4>
-              <p className="text-gray-600 font-bold leading-relaxed">Go to Repository Settings > Pages. Under 'Branch', select <code>main</code> and click Save. Your site will be live at <code>username.github.io/iftu-lms-portal</code>.</p>
+              <p className="text-gray-600 font-bold leading-relaxed">Go to Repository Settings &gt; Pages. Under 'Branch', select <code>main</code> and click Save. Your site will be live at <code>username.github.io/iftu-lms-portal</code>.</p>
             </div>
           </div>
         </section>
@@ -119,8 +119,8 @@ const DevPortal: React.FC = () => {
              <p className="font-mono text-2xl font-black text-center">API_KEY = [YOUR_SECRET_KEY]</p>
           </div>
           <p className="text-xs font-black uppercase tracking-widest text-gray-400">
-            For GitHub: Actions Secrets and Variables > Actions.<br/>
-            For Firebase: Hosting > Environment Variables.
+            For GitHub: Actions Secrets and Variables &gt; Actions.<br/>
+            For Firebase: Hosting &gt; Environment Variables.
           </p>
         </section>
 

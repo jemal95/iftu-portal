@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { User, Grade, EducationLevel, Course, Stream, Exam, News } from '../types';
-import { fetchLatestEducationNews } from '../services/geminiService';
+import { User, Grade, EducationLevel, Course, Stream, Exam, News } from './types';
+import { fetchLatestEducationNews } from './geminiService';
 
 interface AdminDashboardProps {
   users: User[];

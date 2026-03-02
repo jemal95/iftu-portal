@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { User, Course } from '../types';
+import { User, Course } from './types';
 
 interface CertificatePortalProps {
   user: User;

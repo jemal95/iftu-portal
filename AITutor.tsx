@@ -1,8 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { askTutor } from '../services/geminiService';
+import { askTutor } from './geminiService';
 // Modality is part of @google/genai, not types.ts
-import { Language } from '../types';
+import { Language } from './types';
 import { GoogleGenAI, Modality } from "@google/genai";
 
 const AITutor: React.FC = () => {

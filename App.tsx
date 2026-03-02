@@ -1,21 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import CourseCard from './components/CourseCard';
-import AITutor from './components/AITutor';
-import ExamEngine from './components/ExamEngine';
-import CourseViewer from './components/CourseViewer';
-import Leaderboard from './components/Leaderboard';
-import AdminDashboard from './components/AdminDashboard';
-import TeacherDashboard from './components/TeacherDashboard';
-import PerformancePortal from './components/PerformancePortal';
-import RegistrationPortal from './components/RegistrationPortal';
-import AboutPortal from './components/AboutPortal';
-import CampusLocator from './components/CampusLocator';
-import DevPortal from './components/DevPortal';
+import { Analytics } from '@vercel/analytics/react';
+import Header from './Header';
+import CourseCard from './CourseCard';
+import AITutor from './AITutor';
+import ExamEngine from './ExamEngine';
+import CourseViewer from './CourseViewer';
+import Leaderboard from './Leaderboard';
+import AdminDashboard from './AdminDashboard';
+import TeacherDashboard from './TeacherDashboard';
+import PerformancePortal from './PerformancePortal';
+import RegistrationPortal from './RegistrationPortal';
+import AboutPortal from './AboutPortal';
+import CampusLocator from './CampusLocator';
+import DevPortal from './DevPortal';
 import { MOCK_COURSES, MOCK_NEWS, MOCK_EXAMS, SUMMER_STATS, SUMMER_ACTIVITIES } from './constants';
 import { Course, Grade, User, Exam, ExamResult, EducationLevel, Stream, Language, News } from './types';
-import { fetchLatestEducationNews } from './services/geminiService';
+import { fetchLatestEducationNews } from './geminiService';
 
 const TRANSLATIONS: Record<Language, Record<string, string>> = {
   en: { home: 'Home', courses: 'Courses', exams: 'Exams', tutor: 'AI Tutor', about: 'About', news: 'News', locator: 'Locator', login: 'Login', register: 'Register', leaderboard: 'Rankings', performance: 'My Results', documentation: 'Guide' },
@@ -315,6 +316,7 @@ const App: React.FC = () => {
           </footer>
         </>
       )}
+      <Analytics />
     </div>
   );
 };

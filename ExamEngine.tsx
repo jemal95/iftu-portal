@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Exam, Question, ExamResult } from '../types';
+import { Exam, Question, ExamResult } from './types';
 
 interface ExamEngineProps {
   exam: Exam;

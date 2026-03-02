@@ -1,6 +1,6 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
-import { Language, Question } from "../types";
+import { Language, Question } from "./types";
 
 const LANGUAGE_NAMES = {
   am: "Amharic (አማርኛ)",

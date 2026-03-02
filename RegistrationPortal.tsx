@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Grade, Stream, EducationLevel, User } from '../types';
+import { Grade, Stream, EducationLevel, User } from './types';
 
 interface RegistrationPortalProps {
   onRegister: (user: User) => void;
