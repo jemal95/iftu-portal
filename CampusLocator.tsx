@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { findNearbyColleges } from '../services/geminiService';
-import { NATIONAL_CENTER_INFO } from '../constants';
+import { findNearbyColleges } from './geminiService';
+import { NATIONAL_CENTER_INFO } from './constants';
 
 const CampusLocator: React.FC = () => {
   const [loading, setLoading] = useState(false);

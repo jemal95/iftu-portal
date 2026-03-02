@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { NATIONAL_CENTER_INFO } from '../constants';
+import { NATIONAL_CENTER_INFO } from './constants';
 
 const AboutPortal: React.FC = () => {
   return (

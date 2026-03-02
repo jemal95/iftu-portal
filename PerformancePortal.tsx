@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ExamResult, Exam, User, Course } from '../types';
+import { ExamResult, Exam, User, Course } from './types';
 import ReportCard from './ReportCard';
 import PaymentPortal from './PaymentPortal';
 import CertificatePortal from './CertificatePortal';

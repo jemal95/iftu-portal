@@ -1,7 +1,7 @@
 
 import React, { useState, useRef } from 'react';
-import { Exam, Question, Grade, Stream } from '../types';
-import { parseExamDocument, generateExamQuestions } from '../services/geminiService';
+import { Exam, Question, Grade, Stream } from './types';
+import { parseExamDocument, generateExamQuestions } from './geminiService';
 
 interface TeacherDashboardProps {
   exams: Exam[];

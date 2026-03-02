@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExamResult } from '../types';
+import { ExamResult } from './types';
 
 interface ReportCardProps {
   result: ExamResult;

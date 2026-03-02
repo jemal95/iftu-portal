@@ -1,6 +1,6 @@
 
 import { supabase } from './supabaseClient';
-import { User, ExamResult, Course } from '../types';
+import { User, ExamResult, Course } from './types';
 
 export const dbService = {
   // SYNC USER DATA

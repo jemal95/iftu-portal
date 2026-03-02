@@ -1,5 +1,5 @@
 import React from 'react';
-import { Course, Stream } from '../types';
+import { Course, Stream } from './types';
 
 interface CourseCardProps {
   course: Course;

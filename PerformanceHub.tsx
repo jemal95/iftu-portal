@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ExamResult, Exam } from '../types';
+import { ExamResult, Exam } from './types';
 import ReportCard from './ReportCard';
 
 interface PerformanceHubProps {

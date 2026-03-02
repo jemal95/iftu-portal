@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Language } from '../types';
+import { Language } from './types';
 
 interface HeaderProps {
   onNavClick: (view: string) => void;
