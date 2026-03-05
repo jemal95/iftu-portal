@@ -8,14 +8,18 @@ if (!rootElement) {
   throw new Error("Could not find root element to mount to");
 }
 
-// Register PWA Service Worker
+// Safe Service Worker Registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then(registration => {
-      console.log('Sovereign SW registered: ', registration);
-    }).catch(registrationError => {
-      console.log('Sovereign SW registration failed: ', registrationError);
-    });
+    // We use a relative path and catch errors gracefully to handle development sandbox origin issues
+    navigator.serviceWorker.register('./sw.js', { scope: './' })
+      .then(registration => {
+        console.log('Sovereign SW registered: ', registration.scope);
+      })
+      .catch(registrationError => {
+        // Log as a warning in dev, as some sandboxes block SW origins
+        console.warn('Sovereign SW skipped or failed (common in dev sandboxes): ', registrationError.message);
+      });
   });
 }
 
